@@ -33,4 +33,4 @@ Thank you, that is all for now. N/B: Updated 22/02/22. (The date looks cool don'
 
 I am adding more features and functionality to this app. If you're following along from the YouTube videos, please take note of the changes in file structure and everything.
 
-### Built by [Thomas Sankara](https://tsbsankara.netlify.app)
+### Built by [Himanshu Kushwaha]
