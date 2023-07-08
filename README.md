@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# About Invoicer - Read the note at the end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### https://invoicerv2.netlify.app
 
-## Available Scripts
+![alt](./Screenshot.png)
 
-In the project directory, you can run:
+## Current Features
 
-### `npm start`
+1. Form to capture yours and your client's data such as full name, email address, physical address, website and your bank account details.
+2. Input invoice number, invoice date and due date.
+3. Create invoice table - add, edit and remove items from your table.
+4. See the total amount of items in the table.
+5. Write additional notes to your client such as how to pay, bank details and so on and so forth.
+6. Preview your invoice.
+7. Print your invoice.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Updates
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. I've updated `react-scripts` to version 5.0.0 which is the latest version. Take note of this if you're coming from the YouTube series.
+2. I have now installed Tailwind CSS via `npm` as they have released version 3 which includes many more features out of the box and works amazingly with the updated `react-scripts`. Take note of this as well if you're coming from the YouTube series.
+3. I added a landing page and login/logout authentication and redesigned the default page for the invoice application. Once again, please take note of this if you're coming from the YouTube series.
 
-### `npm test`
+Thank you, that is all for now. N/B: Updated 22/02/22. (The date looks cool don't it?) - Yes, I know I've made a grammar error.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Todos (additional features to add)
 
-### `npm run build`
+1. Modal to send invoice to client's email - so, add input for client email.
+2. Currency converter because yes.
+3. Research PDFLayer to convert invoice to pdf for download (and also to send to email).
+4. Probably better if I display the form and invoice side by side instead of having to switch every single time to preview.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## NOTE:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I am adding more features and functionality to this app. If you're following along from the YouTube videos, please take note of the changes in file structure and everything.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Built by [Himanshu Kushwaha]
