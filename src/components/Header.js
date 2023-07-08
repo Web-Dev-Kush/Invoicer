@@ -8,7 +8,7 @@ export default function Header({ handlePrint }) {
           Invoicer
         </h1>
       </div>
-      <div className="flex items-center justify-between flex-wrap">
+      {/* <div className="flex items-center justify-between flex-wrap">
         <ul className="flex items-center justify-between flex-wrap">
           <li>
             <button
@@ -36,7 +36,7 @@ export default function Header({ handlePrint }) {
             </button>
           </li>
         </ul>
-      </div>
+      </div> */}
     </header>
   );
 }

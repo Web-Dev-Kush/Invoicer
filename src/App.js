@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Notes from "./components/Notes";
@@ -7,10 +7,10 @@ import MainDetails from "./components/MainDetails";
 import ClientDetails from "./components/ClientDetails";
 import Dates from "./components/Dates";
 import TableForm from "./components/TableForm";
+import ReactToPrint from "react-to-print";
 
 function App() {
   const [showInvoice, setShowInvoice] = useState(false);
-
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
@@ -23,13 +23,15 @@ function App() {
   const [invoiceNumber, setInvoiceNumber] = useState("");
   const [invoiceDate, setInvoiceDate] = useState("");
   const [dueDate, setDueDate] = useState("");
-  const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState("Please pay dues before due date");
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("");
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
   const [list, setList] = useState([]);
   const [total, setTotal] = useState(0);
+
+  const componentRef = useRef();
 
   function handlePrint() {
     window.print();
@@ -38,45 +40,58 @@ function App() {
     <>
       <main className="m-5 p-5 md:max-w-xl md:mx-auto lg:max-w-2xl xl:max-w-4xl bg-white rounded shadow">
         {showInvoice ? (
-          <div>
-            <Header handlePrint={handlePrint} />
-            <MainDetails name={name} address={address} />
-            <ClientDetails
-              clientName={clientName}
-              clientAddress={clientAddress}
+          <>
+            <ReactToPrint
+              trigger={() => (
+                <button
+                  className="bg-blue-500 ml-5 text-white font-bold py-2 px-8 rounded shadow border-2 
+          border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
+                >
+                  Print / Download
+                </button>
+              )}
+              content={() => componentRef.current}
             />
-            <Dates
-              invoiceNumber={invoiceNumber}
-              invoiceDate={invoiceDate}
-              dueDate={dueDate}
-            />
-            <Tables
-              description={description}
-              quantity={quantity}
-              price={price}
-              amount={amount}
-              list={list}
-              setList={setList}
-              total={total}
-              setTotal={setTotal}
-            />
-            <Notes notes={notes} />
-            <Footer
-              name={name}
-              email={email}
-              website={website}
-              bankName={bankName}
-              bankAccount={bankAccount}
-              phone={phone}
-            />
+            <div ref={componentRef} className="p-5">
+              <Header handlePrint={handlePrint} />
+              <MainDetails name={name} address={address} />
+              <ClientDetails
+                clientName={clientName}
+                clientAddress={clientAddress}
+              />
+              <Dates
+                invoiceNumber={invoiceNumber}
+                invoiceDate={invoiceDate}
+                dueDate={dueDate}
+              />
+              <Tables
+                description={description}
+                quantity={quantity}
+                price={price}
+                amount={amount}
+                list={list}
+                setList={setList}
+                total={total}
+                setTotal={setTotal}
+              />
+              <Notes notes={notes} />
+              <Footer
+                name={name}
+                email={email}
+                website={website}
+                bankName={bankName}
+                bankAccount={bankAccount}
+                phone={phone}
+              />
+            </div>
             <button
               onClick={() => setShowInvoice(false)}
               className="bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 
-              border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
+          border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
             >
               Edit Information
             </button>
-          </div>
+          </>
         ) : (
           <>
             {/* name, address, email, phone, bank name, 

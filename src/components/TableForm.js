@@ -21,19 +21,23 @@ export default function TableForm({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newItems = {
-      id: uuidv4(),
-      description: description,
-      quantity: quantity,
-      price: price,
-      amount: amount,
-    };
-    setDescription("");
-    setQuantity("");
-    setPrice("");
-    setAmount("");
-    setList([...list, newItems]);
-    setIsEditing(false);
+    if (!description || !quantity || !price) {
+      alert("Please fill in all inputs!");
+    } else {
+      const newItems = {
+        id: uuidv4(),
+        description: description,
+        quantity: quantity,
+        price: price,
+        amount: amount,
+      };
+      setDescription("");
+      setQuantity("");
+      setPrice("");
+      setAmount("");
+      setList([...list, newItems]);
+      setIsEditing(false);
+    }
   };
 
   useEffect(() => {
